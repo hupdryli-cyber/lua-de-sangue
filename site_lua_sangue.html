@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lua de Sangue</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: #b30000;
+    font-family: "Cinzel", serif;
+    text-align: center;
+    background-image: url('IMAGE1.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+    animation: pulseBg 8s infinite alternate;
+  }
+
+  @keyframes pulseBg {
+    0% { filter: brightness(0.6); }
+    100% { filter: brightness(1); }
+  }
+
+  .centered { margin-top: 80px; }
+
+  .blood-moon {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: url('IMAGE3.png');
+    background-size: cover;
+    margin: 0 auto;
+    box-shadow: 0 0 50px #b30000, 0 0 90px #4d0000 inset;
+    animation: moonPulse 4s infinite ease-in-out;
+  }
+
+  @keyframes moonPulse {
+    0% { transform: scale(1); box-shadow: 0 0 40px #b30000; }
+    100% { transform: scale(1.04); box-shadow: 0 0 80px #ff0000; }
+  }
+
+  .phrase {
+    margin-top: 40px;
+    font-size: 1.6rem;
+    letter-spacing: 3px;
+    text-shadow: 0 0 8px #b30000;
+    animation: glitch 3s infinite;
+  }
+
+  @keyframes glitch {
+    0% { opacity: 1; }
+    45% { opacity: 1; }
+    46% { opacity: 0.6; transform: translateX(-2px); }
+    47% { opacity: 1; transform: translateX(2px); }
+    48% { opacity: 0.7; }
+    100% { opacity: 1; transform: none; }
+  }
+
+  .buttons {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  button {
+    background: #1a0000;
+    color: #b30000;
+    border: 1px solid #b30000;
+    padding: 12px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+    text-shadow: 0 0 6px #b30000;
+  }
+
+  button:hover {
+    background: #b30000;
+    color: #000;
+    box-shadow: 0 0 15px #b30000;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95) url('IMAGE2.png');
+    background-size: cover;
+    color: #b30000;
+    display: none;
+    padding: 40px;
+    overflow-y: auto;
+    animation: fadeIn 0.5s;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .ritual-symbol {
+    width: 330px;
+    height: 330px;
+    margin: 20px auto;
+    border-radius: 50%;
+    border: 3px solid #b30000;
+    box-shadow: 0 0 40px #b30000;
+    background-image: url('IMAGE4.png');
+    background-size: cover;
+    animation: rotate 20s linear infinite;
+  }
+
+  @keyframes rotate {
+    from { transform: rotate(0); }
+    to { transform: rotate(360deg); }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="centered">
+  <div class="blood-moon"></div>
+  <div class="phrase">"Quando a lua sangra... o esquecido desperta."</div>
+  <div class="phrase">"Nada permanece enterrado para sempre."</div>
+
+  <div class="buttons">
+    <button onclick="openPage('pg1')">O que é a Lua de Sangue?</button>
+    <button onclick="openPage('pg2')">Quais foram as 3 Luas de Sangue?</button>
+    <button onclick="openPage('pg3')">○ ○ ○ ○ ○</button>
+    <button onclick="openPage('pg4')">Quando será a próxima Lua de Sangue?</button>
+    <button onclick="openPage('pg5')">Como impedir a Lua de Sangue?</button>
+  </div>
+</div>
+
+<!-- PAGE 1 -->
+<div id="pg1" class="overlay">
+  <div class="ritual-symbol"></div>
+  <h2>Um Presente e uma Dor</h2>
+  <p>Uma Lua a cada era, assim "ELE" se manterá em sua prisão.</p>
+  <p>Um povo cairá, e um amado ressurgirá.</p>
+</div>
+
+<!-- PAGE 2 -->
+<div id="pg2" class="overlay" style="font-size:0.85rem;">
+  <h1>Luas de Sangue</h1>
+
+  <h2>Primeira Lua de Sangue — A Promeça Comprida</h2>
+  <p>Era Élfica: 1ª Era<br>Data: Ano 666 Calanir, dia 73, hora 03:19:47</p>
+  <p><strong>Kharum-Dhal</strong><br>
+  Criaturas baixas de pele acinzentada, com corcovas cheias de fluidos corrosivos e endurecedores usados na alimentação e na construção. Possuíam um espiral de pele pulsante no lugar do rosto, que servia como sensor de movimento e boca ao mesmo tempo. As espirais eram formadas por guelras carnosas usadas para respirar e triturar alimento e no centro da espiral e rosto deles tinha um pequeno orifício onde podiam atirar seus fluidos. Viviam em labirintos dobrados, moldando ao seu redor.<br>
+  <strong>Extinção:</strong> Grandes terremotos surgiram espalhados por todo o continente; seus labirintos subterrâneos desmoronaram e eles foram todos mortos.</p>
+
+  <h2>Segunda Lua de Sangue — A Escolha Sábia</h2>
+  <p>Era Élfica: 2ª Era<br>Data Élfica: Ano 4.679 Ysiriel, dia 12, hora 03:19:47</p>
+  <p><strong>Nhalrîe</strong><br>
+  Seres alongados com peles translúcidas, abrigando dentro do corpo uma tempestade perpétua de neve e vento. Rostos sem feições, apenas uma fenda vertical de onde escapavam murmúrios gélidos, comunicando-se com rajadas de ar. Viviam sob o gelo profundo em colônias silenciosas, onde o inverno era uma parte viva e sensível.<br>
+  <strong>Extinção:</strong> Uma chuva fervente caiu o dia inteiro, derretendo todos eles.</p>
+
+  <h2>Terceira Lua de Sangue — A Ruína de um Império</h2>
+  <p>Era Élfica: 3ª Era<br>Data: Ano 5 Avalen, dia 99, hora 03:19:47</p>
+  <p><strong>Orrun-Mëi</strong><br>
+  Criaturas pequenas, entre 70 e 90 cm, com pele lisa e úmida, cauda curta de peixe e dedos membranosos. Tinham cabeças arredondadas com olhos grandes e pretos, capazes de enxergar bem na água turva; vocalizavam em croaks curtos e suaves. Viviam nos grandes oceanos.<br>
+  <strong>Extinção:</strong> Depois de milhares de anos, todas as Tartarugas Dragão saíram de hibernação ao mesmo tempo — o único momento na história em que algo assim aconteceu.</p>
+</div>
+
+<!-- PAGE 3 -->
+<div id="pg3" class="overlay">
+  <div>● O Primogênito</div>
+  <div>● O Inocente</div>
+  <div>● O Traidor</div>
+  <div>● O Sábio</div>
+  <div>● O Guerreiro</div>
+</div>
+
+<!-- PAGE 4 -->
+<div id="pg4" class="overlay">
+  <h1>As Estrelas Guardam o Segredo...</h1>
+  <p>O enigma surgirá aqui.</p>
+</div>
+
+<!-- PAGE 5 -->
+<div id="pg5" class="overlay" style="background-image:url('IMAGE5.png'); background-size:cover;">
+  <h1>É IMPOSSÍVEL IMPEDIR A LUA DE SANGUE!</h1>
+  <p>ELA DEVERÁ ACONTECER!<br>SE AS REGRAS NÃO FOREM CUMPRIDAS OS DANOS SERÃO MAIORES!</p>
+</div>
+
+<script>
+function openPage(id) {
+  document.getElementById(id).style.display = 'block';
+}
+</script>
+
+</body>
+</html>
