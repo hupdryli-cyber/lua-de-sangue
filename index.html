@@ -414,7 +414,7 @@ function calcular() {
   out.innerHTML = "";
 
   if (!ano || ano < 1) return out.innerHTML = "<div class='err'>Ano inválido.</div>";
-  if (era && ano > eraLimits[era]) return out.innerHTML = "<div class='err'>Essa era não durou tudo isso.</div>";
+  if (era && ano > eraLimits[era]) return out.innerHTML = "<div class='err'>Essa era não durou/não vai durar tudo isso.</div>";
   if (isNaN(dia) || dia < 1 || dia > 100) return out.innerHTML = "<div class='err'>Dia inválido.</div>";
   if (isNaN(hora) || hora < 0 || hora > 23) return out.innerHTML = "<div class='err'>Hora inválida.</div>";
   if (isNaN(min) || min < 1 || min > 59) return out.innerHTML = "<div class='err'>Minuto inválido.</div>";
